@@ -1,0 +1,111 @@
+//media queries
+
+@mixin big_device {
+    @media(min-width:$breakpoint-desktop-min) {
+        @content;
+    }
+}
+
+// @mixin medium_device_max {
+//     @media(max-width:$breakpoint-tablet-max) {
+//         @content;
+//     }
+// }
+
+// @mixin medium_device {
+//     @media(min-width:$breakpoint-tablet-min) and (max-width:$breakpoint-tablet-max) {
+//         @content;
+//     }
+// }
+
+// @mixin medium_device_min {
+//     @media(min-width:$breakpoint-tablet-min) {
+//         @content;
+//     }
+// }
+
+@mixin small_device {
+    @media(max-width:$breakpoint-mobile-max) {
+        @content;
+    }
+}
+
+// @include big_device {
+//     
+// }
+
+// @include medium_device_max {
+//     
+// }
+
+// @include medium_device {
+//     
+// }
+
+// @include medium_device_min {
+//     
+// }
+
+// @include small_device {
+//     
+// }
+
+
+
+//fonts
+
+@mixin main_font_regular {
+    font-family: $mainFont;
+    font-weight: $regular;
+    font-style: normal;
+}
+
+@mixin main_font_bold {
+    font-family: $mainFont;
+    font-weight: $bold;
+    font-style: normal;
+}
+
+//
+
+@mixin heading_01 {
+    @include main_font_bold;
+
+    @include big_device {
+        font-size: 2.4rem;
+        line-height: 2.8rem;
+    }
+
+    @include small_device {
+        font-size: 2rem;
+        line-height: 2.3rem;
+    }
+
+}
+
+@mixin heading_02 {
+    @include main_font_bold;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+}
+
+@mixin body_01 {
+    @include main_font_regular;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+}
+
+//img
+
+@mixin img_responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@mixin img_cover {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}

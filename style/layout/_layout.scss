@@ -1,0 +1,170 @@
+body {
+    @include main_font_regular;
+
+    width: 100%;
+    min-height: 100vh;
+    font-size: 1.6rem;
+    background-color: $bodyBg;
+    padding: 3.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comp {
+
+    max-width: 63.5rem;
+    box-shadow: 0px 15px 30px rgba(0, 81, 171, 0.148847);
+    border-radius: .8rem;
+    background-color: #fff;
+
+    @include big_device {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    &__item {
+
+        display: grid;
+
+        @include big_device {
+            padding: 4rem;
+        }
+
+        &--a {
+            border-radius: .8rem .8rem 0 0;
+
+            @include big_device {
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+
+            @include small_device {
+                padding: 2.8rem 2.4rem 3.2rem;
+            }
+        }
+
+        &--b {
+            background-color: $green01;
+            color: #fff;
+            
+
+            @include big_device {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                border-radius: 0 0 0 .8rem;
+            }
+
+            @include small_device {
+                padding: 2.4rem;
+            }
+        }
+
+        &--c {
+
+            background-color: $green01;
+            color: #fff;
+            opacity: .85;
+            
+            @include big_device {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                border-radius: 0 0 .8rem 0;
+            }
+
+            @include small_device {
+                border-radius: 0 0 .8rem .8rem;
+                padding: 2.4rem;
+                
+            }
+
+        }
+
+        &__title {
+            @include heading_01;
+            color: $green01;
+        }
+
+        &__subTitle {
+            @include heading_02;
+            color: $lime;
+            margin-top: 2.4rem;
+
+            @include small_device {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+        }
+
+        &__h3 {
+            @include heading_02;
+        }
+
+        &__p {
+            
+            color: $grey;
+            
+            @include big_device {
+                @include body_01;
+                margin-top: 1.1rem;
+            }
+
+            @include small_device {
+                font-size: 1.4rem;
+                line-height: 2.6rem;
+                margin-top: 1.6rem;
+            }
+        }
+
+        &__cost {
+            display: flex;
+            margin-top: 1.8rem;
+            align-items: center;
+
+            &__price {
+                @include main_font_bold;
+                font-size: 3.2rem;
+                line-height: 3.7rem;
+            }
+
+            &__month {
+                @include body_01;
+                opacity: .5;
+                margin-left: 1.1rem;
+            }
+        }
+
+        &__desc {
+            @include body_01;
+            margin-top: 0.4rem;
+        }
+
+        &__button {
+            all: unset;
+            @include main_font_bold;
+            background-color: $lime;
+            text-align: center;
+            height: 4.8rem;
+            box-shadow: 0px 1rem 1rem rgba(0, 0, 0, 0.0973011);
+            border-radius: .5rem;
+            cursor: pointer;
+            margin-top: 2.6rem;
+        }
+
+        &__credits {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            margin-top: 1.8rem;
+            opacity: .75;
+        }
+
+    }
+}
